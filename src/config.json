@@ -1,0 +1,19 @@
+{
+	"bot_token": "7031076757:AAGh8bNUeiem1P7bQcy7e01A1n6pdnGJSs0",
+	"logs_id": -1002041264594,
+	"logs_topic_id": 0,
+	"db_dsn": "host=localhost port=5432 dbname=telegram user=bot password=password",
+	"welcome": {
+		"enabled": true,
+		"message": "Привет! Напишите сообщение и я соединю вас с оператором."
+	},
+	"messageCommuniOperator": "Ваше сообщение получено. Оператор свяжется с вами в ближайшее время.",
+	"is_protected_default": false,
+	"language_filter": {
+		"enabled": false,
+		"forbidden_languages": ["tt"],
+		"message": "Извините, но я не могу вам помочь из-за языка вашего Telegram.",
+		"error_rate_limit": 60
+	},
+	"disclose_error_internals": false
+}
