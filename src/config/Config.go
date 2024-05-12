@@ -23,6 +23,7 @@ type Configuration struct {
 		Enabled bool   `json:"enabled"`
 		Message string `json:"message"`
 	} `json:"welcome"`
+	MessageCommuniOperator string `json:"messageCommuniOperator"`
 	IsProtectedDefault bool `json:"is_protected_default"`
 	LanguageFilter     struct {
 		Enabled            bool     `json:"enabled"`

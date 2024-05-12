@@ -67,13 +67,14 @@ func Message(b *gotgbot.Bot, ctx *ext.Context) error {
 			}
 
 			supportId := config.CurrentConfig.LogsID
-			
+			messageOperator := config.CurrentConfig.MessageCommuniOperator
+
 			// Проверяем, было ли уже отправлено сообщение пользователю
 			if !user.MessageSent {
 					// Если сообщение еще не было отправлено, отправляем подтверждение
 					_, err := ctx.EffectiveMessage.Reply(
 							b,
-							"Ваше сообщение получено. Оператор свяжется с вами в ближайшее время.",
+							messageOperator,
 							nil,
 					)
 					if err != nil {
