@@ -104,6 +104,11 @@ func main() {
 
 	dispatcher.AddHandlerToGroup(updateHandlers.NewCommand("mdel", commands.DelMessage), 1)
 
+	// В файле Main.go
+
+	// Добавляем обработчик команды в основной файл
+	dispatcher.AddHandlerToGroup(updateHandlers.NewCommand("getadmins", commands.GetAdmins), 0)
+
 	// Topic-related handlers
 	dispatcher.AddHandlerToGroup(updateHandlers.NewMessage(message.TopicReopened, handlers.TopicReopened), 1)
 	dispatcher.AddHandlerToGroup(updateHandlers.NewMessage(message.TopicClosed, handlers.TopicClosed), 1)

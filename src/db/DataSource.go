@@ -9,10 +9,11 @@ import (
 	"feedbackBot/src/config"
 	"feedbackBot/src/models"
 	"fmt"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
 	"log"
 	"os"
+
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 // Connection - the DB connection
@@ -51,4 +52,14 @@ func Init() {
 	}
 
 	log.Println("Auto-migrated messages table, successfully connected to the DB.")
+}
+
+// GetAllAdmins - извлекает всех администраторов из базы данных
+func GetAllAdmins() ([]*models.User, error) {
+	var admins []*models.User
+	res := Connection.Where("is_admin = ?", true).Find(&admins)
+	if res.Error != nil {
+			return nil, res.Error
+	}
+	return admins, nil
 }
